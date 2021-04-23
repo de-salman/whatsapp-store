@@ -1262,7 +1262,7 @@ p.date i {
 	box-shadow: none;
 }
 
-.cart .total-pay .button-link a {
+.cart .total-pay .button-link button {
 	background-color: #ff4301;
 	color: #fff;
 	border: 0;
