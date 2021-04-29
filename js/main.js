@@ -43,15 +43,15 @@ $(function () {
 
 // alert on checkout
 
-function validation(){
+function validation() {
 
 	var x = document.getElementById('input_text').value
 	var y = document.getElementById('input_text1').value
-	if (y==""){
+	if (y == "") {
 		alert("please fill the name");
 		return false;
 	}
-	else if (x==''){
+	else if (x == '') {
 		alert("please fill the address");
 		return false;
 	}
@@ -91,6 +91,8 @@ function ready() {
 		button.addEventListener('click', addToCartClicked)
 	}
 
+	updateCartTotal()
+
 }
 
 
@@ -114,7 +116,7 @@ function addToCartClicked(event) {
 	var shopItem = button.parentElement.parentElement
 	var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
 	var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-	var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+	// var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
 	// addItemToCart(title, price, imageSrc)
 	// updateCartTotal()
 }
@@ -125,7 +127,7 @@ function addToCartClicked(event) {
 // 	cartRow.classList.add('content')
 // 	var cartItems = document.getElementsByClassName('simple')[0]
 // 	var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-	
+
 // 	for (var i = 0; i < cartItemNames.length; i++) {
 // 		if (cartItemNames[i].innerText == title) {
 // 			alert('This item is already added to the cart')
@@ -198,4 +200,55 @@ function updateCartTotal() {
 
 
 
+
+
+
+
+
+
+
+var add2cart = document.getElementsByClassName('add-to-cart')
+for (var i = 0; i < add2cart.length; i++) {
+	var button = add2cart[i];
+	button.addEventListener('click', function () {
+		targetElement = event.target;
+		if (targetElement) {
+			targetElement.style.display = 'none';
+			nextbutton = targetElement.nextElementSibling;
+			nextbutton.style.display = 'table';
+		}
+	})
+}
+
+var decrease = document.getElementsByClassName('decrease')
+for (var i = 0; i < decrease.length; i++) {
+	var button = decrease[i];
+	button.addEventListener('click', function () {
+		targetElement = event.target;
+		nextElement = targetElement.nextElementSibling;
+		if (targetElement && nextElement.innerHTML > 1) {
+			nextElement.innerHTML = parseInt(nextElement.innerHTML) - 1
+		}
+		else if (targetElement && nextElement.innerHTML == 1) {
+			parentElement = targetElement.parentElement;
+			previousElement = parentElement.previousElementSibling;
+			previousElement.style.display = "block"
+			targetElement.parentElement.style.display = 'none';
+
+		}
+	})
+}
+
+
+var increase = document.getElementsByClassName('increase')
+for (var i = 0; i < increase.length; i++) {
+	var button = increase[i];
+	button.addEventListener('click', function () {
+		targetElement = event.target;
+		previousElement = targetElement.previousElementSibling;
+		if (targetElement) {
+			previousElement.innerHTML = parseInt(previousElement.innerHTML) + 1
+		}
+	})
+}
 

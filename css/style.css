@@ -455,6 +455,7 @@ p.date i {
 
 .category .owl-carousel .owl-stage {
     padding-left: 0 !important;
+	touch-action: none;
 }
 
 /* category page */
@@ -1727,4 +1728,90 @@ footer ul li a i {
 
 .menu .alltab .row .col {
 	margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+.add-to-cart {
+	padding: 12px 10px;
+	background-color: #ff4301;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	color: white;
+}
+
+.quantity {
+	display: none;
+	justify-content: space-between;
+	padding: 0px 15px;
+	background-color: #ff4301;
+	width: 75px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.decrease {
+    padding: 10px 7px;
+    color: white;
+    display: table-cell;
+    padding-right: 13px;
+}
+
+.increase {
+    padding: 10px 13px;
+    color: white;
+    display: table-cell;
+    padding-right: 5px;
+}
+
+.qty {
+	padding: 10px 0px;
+	color: white;
+	display: table-cell;
+}
+
+
+@media screen and (max-width: 425px) {
+	.text .quantity {
+		padding: 0px 5px;
+		width: 60px;
+	}
+  }
+
+
+.veg {
+	width: auto !important;
+    position: absolute;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+input[type=search] {
+	border: 2px solid #ff4301 !important;
+    border-radius: 20px !important;
+    background-color: white !important;
+}
+input[type=search]:focus {
+	border: 2px solid #ff4301 !important;
+    border-radius: 20px !important;
+    background-color: white !important;
 }
